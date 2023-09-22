@@ -10,7 +10,7 @@ int searching(vector<int>&arr,int size,int target )
     int end = size-1;
     int mid = (start+(end-start))/2;
 
-    for(int index=0;index<size;index++)
+    while(start<=end)
     {
         if(arr[mid]==target)
         {
