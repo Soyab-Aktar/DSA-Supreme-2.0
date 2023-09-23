@@ -8,7 +8,7 @@ int missing(vector<int> &arr, int size)
 {
     int start = 0;
     int end = size - 1;
-    int mid = (start + end) / 2;
+    int mid = start + (end - start) / 2;
     int ans = -1;
 
     while (start <= end)
@@ -25,7 +25,7 @@ int missing(vector<int> &arr, int size)
             end = mid - 1;
         }
 
-        mid = (start + end) / 2;
+        mid = start + (end - start) / 2;
     }
 
     if (ans + 1 == 0)
