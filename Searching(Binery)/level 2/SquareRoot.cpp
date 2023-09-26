@@ -1,4 +1,4 @@
-//Find Squar root of a number using binery method
+//Find Squar root of a number using binery method as a integer output
 
 #include<iostream>
 using namespace std;
