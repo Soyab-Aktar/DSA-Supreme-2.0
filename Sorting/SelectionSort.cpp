@@ -46,4 +46,5 @@ int main()
     selectionSort(arr, size);
 
     return 0;
+    return 0;
 }
