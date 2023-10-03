@@ -1,6 +1,7 @@
 // Sorting using Selection sort method
 
 #include <iostream>
+#include<algorithm>
 #include <vector>
 using namespace std;
 
@@ -45,6 +46,5 @@ int main()
 
     selectionSort(arr, size);
 
-    return 0;
     return 0;
 }
