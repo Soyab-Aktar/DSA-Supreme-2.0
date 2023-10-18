@@ -6,10 +6,12 @@ int main()
     // pointer creation
     int *ptr = &a;
 
-    // address of a
-    cout<<a<<endl;
+    a++;
+    *ptr++;
+
+    cout << a << endl;
     cout << &a << endl;   // give address of a
-    cout << *ptr << endl; // give value stored in address of a
+    cout << *ptr << endl; // give value stored in address of a , you will get garbage value
     cout << ptr << endl;  // address of a
     cout << &ptr << endl; // give own address of ptr
 
