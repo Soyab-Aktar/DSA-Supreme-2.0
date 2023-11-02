@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/Worked files/C++/Practice/practice Array",
-      "program": "d:/Worked files/C++/Practice/practice Array/build/Debug/outDebug",
+      "cwd": "d:/Worked files/C++/Supreme 2.0/2 practice Array",
+      "program": "d:/Worked files/C++/Supreme 2.0/2 practice Array/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
