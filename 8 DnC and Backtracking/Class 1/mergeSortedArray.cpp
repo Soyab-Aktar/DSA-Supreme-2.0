@@ -20,6 +20,8 @@ void merge(int arr[], int start, int end)
         k++;
     }
 
+    k = mid + 1;
+
     for (int i = 0; i < lenright; i++)
     {
         right[i] = arr[k];
