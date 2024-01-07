@@ -87,4 +87,11 @@ int main()
     student s3(4, 19, "yuru", 5);
 
     cout << s3.name << endl;
+
+    // alocating heap
+    student *s4 = new student(2, 14, "sova", 8);
+    cout << s4->name << endl;
+    cout << (*s4).name << endl;
+
+    delete s4; // no leak
 }
