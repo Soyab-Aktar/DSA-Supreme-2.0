@@ -8,10 +8,10 @@ class abc
 public:
     abc()
     {
-        x = 0;
-        y = new int(0);
+        x = 2;
+        y = new int(5);
     }
-    int getx() const
+    int getx() const // to make constant of class's function
     {
         return x;
     }

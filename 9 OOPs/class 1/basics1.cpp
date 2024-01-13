@@ -9,7 +9,7 @@ private:
     string gf;
 
 public:
-    // this is a class 's properties
+    // this is a class's properties
     int id;
     int age;
     string name;
