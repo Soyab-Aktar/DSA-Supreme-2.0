@@ -3,19 +3,20 @@ using namespace std;
 class abc
 {
     int x;
-    int *y;
+    // int *y;
     int z;
 
 public:
-    abc()
-    {
-        x = 0;
-        y = new int(0);
-    }
-    abc(int _x, int _y, int _z = 0)
+    // abc()
+    // {
+    //     x = 0;
+    //     z = 0;
+    //     // y = new int(0);
+    // }
+    abc(int _x, int _z)
     {
         x = _x;
-        y = new int(_y);
+        // y = new int(_y);
         z = _z;
     }
     int getx() const
@@ -26,14 +27,14 @@ public:
     {
         x = _value;
     }
-    int gety() const
-    {
-        return *y;
-    }
-    void sety(int _value)
-    {
-        *y = _value;
-    }
+    // int gety() const
+    // {
+    //     return *y;
+    // }
+    // void sety(int _value)
+    // {
+    //     *y = _value;
+    // }
     int getz() const
     {
         return z;
@@ -43,13 +44,15 @@ public:
         z = _value;
     }
 };
+
 void print(const abc &find)
 {
-    cout << find.getx() << " " << find.gety() << " " << find.getz() << endl;
+    cout << find.getx() << " " << find.getz() << endl;
 }
 int main()
 {
-    abc find(2, 5, 9);
+    abc find(2, 3);
     print(find);
+
     return 0;
 }

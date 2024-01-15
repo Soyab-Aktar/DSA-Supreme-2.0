@@ -14,4 +14,5 @@ int main()
     cout << &ptr << endl; // give own address of ptr
 
     return 0;
+
 }
