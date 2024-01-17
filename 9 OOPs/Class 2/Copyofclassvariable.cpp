@@ -52,7 +52,7 @@ int main()
     student s2(20, 6, "yuru");
     cout << s2.name << endl;
     cout << s2.age << endl;
-    student s4 = s2;
+    student s4 = s2; //we need to write this way
     cout << s4.name << endl;
     cout << s4.age << endl;
 
