@@ -1,5 +1,4 @@
 // Sorting using Incertion sort method
-
 #include <iostream>
 #include <vector>
 using namespace std;
