@@ -82,6 +82,23 @@ void deletion(node *&head, node *&tail, int pos)
         delete temp;
         tail = preNode;
     }
+    else // Deletion from middle
+    {
+        node *current = head;
+        for (int i = 1; i < pos; ++i)
+            current = current->next;
+
+        node *prevNode = current->prev;
+        node *nextNode = current->next;
+
+        prevNode->next = nextNode;
+        nextNode->prev = prevNode;
+
+        current->next = NULL;
+        current->prev = NULL;
+
+        delete current;
+    }
 }
 
 int main()
@@ -97,7 +114,7 @@ int main()
 
     printll(head);
 
-    deletion(head, tail, 4);
+    deletion(head, tail, 3);
     printll(head);
 
     return 0;
