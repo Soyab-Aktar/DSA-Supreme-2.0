@@ -26,21 +26,6 @@ int printll(node *head)
     }
     cout << endl;
 }
-
-void insert(node *&head, int data)
-{
-    if (head == NULL)
-    {
-        node *temp = new node(data);
-        head = temp;
-    }
-    else
-    {
-        node *temp = new node(data);
-        temp->next = head;
-        head = temp;
-    }
-}
 void insertll(node *&head, node *&tail, int data)
 {
     if (head == NULL)
@@ -57,6 +42,22 @@ void insertll(node *&head, node *&tail, int data)
         tail = temp;
     }
 }
+
+void reverse(node *&head)
+{
+    node *pre = NULL;
+    node *curr = head;
+    while (curr != NULL)
+    {
+        node *temp = curr->next;
+        curr->next = pre;
+        pre = curr;
+        curr = temp;
+    }
+
+    head = pre;
+}
+
 int main()
 {
     node *head = NULL;
@@ -67,5 +68,7 @@ int main()
     insertll(head, tail, 40);
     insertll(head, tail, 50);
 
+    printll(head);
+    reverse(head);
     printll(head);
 }
