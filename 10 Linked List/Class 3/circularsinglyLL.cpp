@@ -18,7 +18,7 @@ public:
     }
 };
 
-void insertAtBeginning(node *&last, int data)
+void insert(node *&last, int data)
 {
     node *temp = new node(data);
 
@@ -56,11 +56,17 @@ int main()
 {
     node *last = NULL;
 
-    insertAtBeginning(last, 10);
-    insertAtBeginning(last, 20);
-    insertAtBeginning(last, 30);
-    insertAtBeginning(last, 40);
-    insertAtBeginning(last, 50);
+    insert(last, 1);
+    insert(last, 2);
+    insert(last, 3);
+    insert(last, 4);
 
     print(last);
+
+    // Additional print statements to show the circular nature
+    if (last != NULL)
+    {
+        cout << "Last node data: " << last->data << endl;
+        cout << "Next node after last: " << last->next->data << endl; // Should be the first node's data
+    }
 }
