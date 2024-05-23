@@ -57,5 +57,5 @@ int main()
 
     int mid = middleelement(st);
 
-    cout << mid;
+    cout << "Middle element of stack : " << mid;
 }
