@@ -22,7 +22,7 @@ void insertbottom(stack<int> &st, int element)
     st.push(temp);
 }
 
-void display(stack<int> st)
+void display(stack<int> st) // Set it in pass by value
 {
     while (!st.empty())
     {
@@ -40,7 +40,7 @@ int main()
     st.push(20);
     st.push(30);
     st.push(40);
-    
+
     cout << "Original stack: ";
     display(st);
 
