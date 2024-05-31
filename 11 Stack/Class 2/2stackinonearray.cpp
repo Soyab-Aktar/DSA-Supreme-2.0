@@ -92,7 +92,7 @@ int main()
     st.push2(99);
     st.push2(88);
     st.push1(55);
-    st.push1(30);
+    
 
     st.display();
 }

@@ -16,7 +16,8 @@ public:
         this->next = NULL;
     }
 };
-int printll(node *head)
+
+void display(node *head)
 {
     node *temp = head;
     while (temp != NULL)
@@ -26,7 +27,7 @@ int printll(node *head)
     }
     cout << endl;
 }
-void insertll(node *&head, node *&tail, int data)
+void insert(node *&head, node *&tail, int data)
 {
     if (head == NULL)
     {
@@ -52,23 +53,26 @@ void reverse(node *&head)
         node *temp = curr->next;
         curr->next = pre;
         pre = curr;
-        curr = temp;ṇ
+        curr = temp;
     }
-
     head = pre;
-}ṇṇ
+}
+void addone(node *&head)
+{
+    
+}
 
 int main()
 {
     node *head = NULL;
     node *tail = NULL;
-    insertll(head, tail, 10);
-    insertll(head, tail, 20);
-    insertll(head, tail, 30);
-    insertll(head, tail, 40);
-    insertll(head, tail, 50);
 
-    printll(head);
+    insert(head, tail, 1);
+    insert(head, tail, 5);
+    insert(head, tail, 7);
+
+    display(head);
+
     reverse(head);
-    printll(head);
+    display(head);
 }
