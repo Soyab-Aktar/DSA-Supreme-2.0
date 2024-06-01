@@ -31,4 +31,10 @@ int main()
     {
         cout << "Queue is not empty .";
     }
+
+    // front element
+    cout << "Front element is : " << q.front() << endl;
+
+    // Last element
+    cout << "Front element is : " << q.back();
 }
