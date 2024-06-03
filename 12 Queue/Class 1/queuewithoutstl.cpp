@@ -4,6 +4,7 @@ using namespace std;
 
 class queue
 {
+public:
     int *arr;
     int size;
     int front;
@@ -19,9 +20,9 @@ class queue
     void push(int data)
     {
         // check full
-        if (rear = size - 1)
+        if (rear == size - 1)
         {
-            cout << "Queue is in overflow .";
+            cout << "Queue is in overflow ." << endl;
             return;
         }
         else if (front == -1 && rear == -1)
@@ -49,7 +50,7 @@ class queue
         }
         else if (front == -1 && rear == -1)
         {
-            cout << "Queue is in underflow .";
+            cout << "Queue is in underflow ." << endl;
             return;
         }
         else
@@ -63,12 +64,91 @@ class queue
     {
         if (front == -1 && rear == -1)
         {
-            cout << "Queue is empty .";
+            return true;
         }
         else
         {
-            cout << "Queue is non empty .";
+            return false;
+        }
+        cout << endl;
+    }
+
+    int getsize()
+    {
+        if (front == -1 && rear == -1)
+        {
+            return 0;
+        }
+        else
+        {
+            return rear - front + 1;
+        }
+    }
+
+    int getfront()
+    {
+        if (front == -1)
+        {
+            cout << "No element in queue ." << endl;
+            return -1;
+        }
+        else
+        {
+            return arr[front];
+        }
+    }
+    int getrear()
+    {
+        if (front == -1)
+        {
+            cout << "No element in queue ." << endl;
+            return -1;
+        }
+        else
+        {
+            return arr[rear];
+        }
+    }
+
+    void display()
+    {
+        for (int i = 0; i < size; i++)
+        {
+            cout << arr[i] << " ";
         }
         cout << endl;
     }
 };
+
+int main()
+{
+    queue q(5);
+    cout << "Is queue is empty : " << q.isempty() << endl;
+
+    // q.display();
+
+    q.push(10);
+    // q.display();
+
+    q.push(20);
+    // q.display();
+
+    q.push(30);
+    // q.display();
+
+    q.push(40);
+    // q.display();
+
+    q.push(50);
+    q.display();
+
+    cout << "size of queue is : " << q.getsize() << endl;
+    cout << "Front element of queue is : " << q.getfront() << endl;
+    cout << "Rear element of queue is : " << q.getrear() << endl;
+
+    q.pop();
+    q.display();
+
+    cout << "size of queue is : " << q.getsize() << endl;
+    cout << "Is queue is empty : " << q.isempty() << endl;
+}
