@@ -1,8 +1,6 @@
 #include <iostream>
-#include <vector>
 using namespace std;
-
-class queue
+class cqueue
 {
 public:
     int *arr;
@@ -10,28 +8,35 @@ public:
     int front;
     int rear;
 
-    queue(int size)
+    cqueue(int size)
     {
         arr = new int[size];
         this->size = size;
         front = -1;
         rear = -1;
     }
+
     void push(int data)
     {
-        // check full
-        if (rear == size - 1)
+        // full queue
+        if (rear == size - 1 && front == 0)
         {
-            cout << "Queue is in overflow ." << endl;
-            return;
+            cout << "Queue overloaded . " << endl;
         }
+        // empty queue
         else if (front == -1 && rear == -1)
         {
-            // empty condition
-            front++;
             rear++;
+            front++;
             arr[rear] = data;
         }
+        // circular condition
+        else if (rear == size - 1 && front != 0)
+        {
+            rear = 0;
+            arr[rear] = data;
+        }
+        // normal case
         else
         {
             rear++;
@@ -41,25 +46,31 @@ public:
 
     void pop()
     {
-        // single element condition
+        // single queue
         if (front == rear)
         {
-            arr[front] = -1;
-            front == -1;
-            rear == -1;
+            arr[rear] = -1;
+            front = -1;
+            rear = -1;
         }
+        // empty case
         else if (front == -1 && rear == -1)
         {
-            cout << "Queue is in underflow ." << endl;
-            return;
+            cout << "Queue underflow ." << endl;
         }
+        // circular case
+        else if (front == size - 1)
+        {
+            arr[front] = -1;
+            front = 0;
+        }
+        // normal clase
         else
         {
             arr[front] = -1;
             front++;
         }
     }
-
     bool isempty()
     {
         if (front == -1 && rear == -1)
@@ -131,36 +142,21 @@ public:
         cout << endl;
     }
 };
-
 int main()
 {
-    queue q(5);
-    cout << "Is queue is empty : " << q.isempty() << endl;
-
-    // q.display();
-
-    q.push(10);
-    // q.display();
-
-    q.push(20);
-    // q.display();
-
-    q.push(30);
-    // q.display();
-
-    q.push(40);
-    // q.display();
-
-    q.push(50);
+    cqueue q(3);
     q.display();
 
-    cout << "size of queue is : " << q.getsize() << endl;
-    cout << "Front element of queue is : " << q.getfront() << endl;
-    cout << "Rear element of queue is : " << q.getrear() << endl;
+    q.push(1);
+    q.push(2);
+    q.push(3);
+    q.display();
 
+    q.pop();
+    q.pop();
     q.pop();
     q.display();
 
-    cout << "size of queue is : " << q.getsize() << endl;
-    cout << "Is queue is empty : " << q.isempty() << endl;
+    q.push(5);
+    q.display();
 }
