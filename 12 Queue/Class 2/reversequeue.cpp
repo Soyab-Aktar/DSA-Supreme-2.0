@@ -39,10 +39,6 @@ int main()
     q.push(40);
     q.push(50);
 
-    // cout << "Orginal queue : ";
-    // display(q);
-    // cout << endl;
-
     rev(q);
 
     cout << "Reverse queue : ";
