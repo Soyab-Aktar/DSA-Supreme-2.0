@@ -16,8 +16,7 @@ public:
     }
 };
 
-// Its return root node of  the created tree
-node *createTree()
+node *createtree()
 {
     cout << "Enter the value for the node : ";
     int data;
@@ -29,19 +28,34 @@ node *createTree()
         return NULL;
     }
 
-    // step 1 = Create node
     node *root = new node(data);
-    // step 2 = create left subtree
+    // left node
     cout << "Left of Bnode :" << root->data << endl;
-    root->left = createTree();
-    // step 3 = create right subtree
+    root->left = createtree();
+    // right node
     cout << "Right of node :" << root->data << endl;
-    root->right = createTree();
-
-    return root;
+    root->right = createtree();
 }
 
+void postorder(node *root)
+{
+    // Base case
+    if (root == NULL)
+    {
+        return;
+    }
+    // L . R . N
+
+    // L
+    postorder(root->left);
+    // R
+    postorder(root->right);
+    // N
+    cout << root->data << " ";
+}
 int main()
 {
-    node *root = createTree();
+    node *root = createtree();
+
+    postorder(root);
 }
