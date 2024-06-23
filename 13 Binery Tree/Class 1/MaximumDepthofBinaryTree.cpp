@@ -53,9 +53,9 @@ int maxheight(node *root)
 
     int lefttree = maxheight(root->left);
     int righttree = maxheight(root->right);
-    int height = max(lefttree, righttree);
+    int height = max(lefttree, righttree) + 1;
 
-    return height + 1;
+    return height;
 }
 
 int main()
