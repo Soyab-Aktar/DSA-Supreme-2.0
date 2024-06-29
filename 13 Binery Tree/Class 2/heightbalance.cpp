@@ -36,6 +36,7 @@ node *tree()
         root->left = tree();
         cout << root->data << " right -> " << endl;
         root->right = tree();
+        return root;
     }
 }
 
