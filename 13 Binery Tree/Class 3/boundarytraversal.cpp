@@ -94,16 +94,10 @@ void boundarytraversal(node *root)
     {
         return;
     }
-    leftboundary(root);
+    cout << root->data << " ";
+    leftboundary(root->left);
     leafboundary(root);
-    if (root->right != NULL)
-    {
-        rightboundary(root->right);
-    }
-    else
-    {
-        rightboundary(root->left);
-    }
+    rightboundary(root->right);
 }
 int main()
 {
