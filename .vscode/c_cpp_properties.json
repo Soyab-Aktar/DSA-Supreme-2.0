@@ -1,17 +1,21 @@
 {
   "configurations": [
     {
-      "name": "windows-gcc-x86",
+      "name": "Linux",
       "includePath": [
-        "${workspaceFolder}/**"
-      ],
-      "compilerPath": "D:/C++/Mingw/bin/gcc.exe",
-      "cStandard": "${default}",
-      "cppStandard": "${default}",
-      "intelliSenseMode": "windows-gcc-x86",
-      "compilerArgs": [
-        ""
-      ]
+       "${workspaceFolder}/**",
+       "/usr/include/c++/13",
+       "/usr/include/x86_64-linux-gnu/c++/13",
+       "/usr/include/c++/13/backward",
+       "/usr/local/include",
+       "/usr/include"
+]
+, 
+      "defines": [],
+      "compilerPath": "/usr/bin/g++",
+      "cStandard": "c11",
+      "cppStandard": "c++17",
+      "intelliSenseMode": "linux-gcc-x64"
     }
   ],
   "version": 4
